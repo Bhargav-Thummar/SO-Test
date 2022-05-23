@@ -17,4 +17,6 @@
 //= require activestorage
 //= require turbolinks
 //= require effective_datatables
+//= require chartkick
+//= require Chart.bundle
 //= require_tree .

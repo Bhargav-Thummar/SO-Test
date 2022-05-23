@@ -71,3 +71,5 @@ gem 'cancancan'
 gem 'active_link_to'
 gem 'haml-rails'
 gem 'effective_datatables'
+gem "chartkick"
+

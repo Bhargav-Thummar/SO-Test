@@ -2,15 +2,5 @@
   <h2 class="mb-5">Dashboard</h2>
 </div>
 
-<script>
-  $(document).on("click", ".unfavourite", function() {
-    book_id = $(this).data("l");
-    $(this).attr("src", "#{asset_path('loader.gif')}")
-    $(this).removeClass("unfavourite");
-    $.ajax({
-      type: "DELETE",
-      url: "/books/"+ book_id +"/remove_from_favourite",
-    });
-  });
 
-</script>
+<%= column_chart Book.joins(:favourite_books).group("books.title").count %>
