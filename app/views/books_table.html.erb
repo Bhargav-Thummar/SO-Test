@@ -1,0 +1,7 @@
+<h1>All Books</h1>
+
+<% if can?(:create, Book) %>
+  <%= link_to "Add new book", new_admin_book_path, class: "btn btn-primary" %>
+<% end %>
+
+<%= render_datatable(@books_datatable) %>

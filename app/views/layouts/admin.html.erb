@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>BookShop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <%= render partial: "layouts/navbar" %>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-3">
+          <div class="border rounded">
+            <%= active_link_to admin_dashboard_index_path, class:"category-item fw-800 fs-20" do %>
+              &nbsp;
+              Dashboard
+            <% end %>
+            <%= active_link_to admin_books_path, class:"category-item fw-800 fs-20 border-top" do %>
+              &nbsp; 
+              Books
+            <% end %>
+            <%= active_link_to admin_categories_path, class:"category-item fw-800 fs-20 border-top" do %>
+              &nbsp; 
+              Categories
+            <% end %>
+            <%= active_link_to admin_users_path, class:"category-item fw-800 fs-20 border-top" do %>
+              &nbsp; 
+              Users
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

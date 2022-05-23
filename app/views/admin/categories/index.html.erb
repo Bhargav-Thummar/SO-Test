@@ -1,0 +1,7 @@
+<h1>All Categories</h1>
+
+<% if can?(:create, Category) %>
+  <%= link_to "Add new category", new_admin_category_path, class: "btn btn-primary" %>
+<% end %>
+
+<%= render_datatable(@categories_datatable) %>

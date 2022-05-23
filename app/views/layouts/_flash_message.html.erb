@@ -1,0 +1,15 @@
+<% flash.each do |key, value| %>
+  <p class="<%= flash_class(key) %> my-0 text-center">
+    <%= value %>
+    <span class="remove-alert">X</span>
+    <% flash.discard(key) %>
+  </p>
+<% end %>
+
+<script>
+  $(function() {
+    $('.remove-alert').on('click', function(){
+      $(".alert").alert('close');
+    });
+  });
+</script>

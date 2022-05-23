@@ -1,0 +1,33 @@
+<div class="d-flex py-2">
+  <div class="flex-grow-1">
+    <h1>Favorite Books</h1>
+  </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @favourite_books.each do |favourite_book| %>
+      <tr>
+        <td>
+          <%= favourite_book.title %>
+        </td>
+        <td>
+          <%= favourite_book.description %>
+        </td>
+        <td>
+          <%= favourite_book.auther %>
+        </td>
+        <td>
+          <%= link_to "Remove from favourites", add_or_remove_favorite_books_user_dashboard_index_path(favourite_book), method: :post %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

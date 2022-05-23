@@ -1,0 +1,17 @@
+<nav class="navbar sticky-top navbar-light bg-light">
+  <div class="container py-4 px-3">
+    <div class="d-flex align-items-center w-100">
+      <div class="flex-grow-1">
+        <h2 class="text-dark">
+          Book Store
+        </h2>
+      </div>
+      <% if current_user.present? %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "ms-2 btn btn-outline-primary h-100" %>
+      <% else %>
+        <%= link_to "Log In", new_user_session_path, class: "ms-2" %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+<%= render partial: 'layouts/flash_message' %>

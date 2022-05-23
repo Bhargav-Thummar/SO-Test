@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+ 
+ @import "bootstrap";
+ @import "rails_bootstrap_forms";
+ @import "effective_datatables";
+
+a {
+  color: #d39435;
+}
+
+.category-item{
+	display: block;
+	color: #3c3c3c;
+	text-transform: capitalize;
+	padding: 15px 0 15px 0;
+	line-height: normal;
+	text-decoration: none;
+}
+
+.category-item:hover{
+	cursor: pointer;
+	font-weight: 900;
+	background-color: #ebf5e5;
+}
+
+.category-item.selected{
+	background-color: #eeeeee;
+	color: #fff !important;
+}
+
+.fw-800{
+	font-weight: 800;
+}
+
+.fs-25 {
+	font-size: 25px !important;
+}
+
+.fs-20 {
+	font-size: 20px;
+}
+
+.fs-19{
+	font-size: 19px !important;
+}
+
+.active{
+  h5{
+    color: #0d6efd !important;
+  }
+  background-color: #eeeeee;
+}

@@ -1,0 +1,16 @@
+<% url = @book.new_record? ? admin_books_path : admin_book_path(@book) %>
+<%= bootstrap_form_for(@book, url: url, inline_errors: true) do |f| %>
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <%= f.text_field :title, label_class: "required", placeholder: "Book Title" %>
+    </div>
+    <div class="col-md-6 col-12">
+      <%= f.text_field :auther, label_class: "required", placeholder: "Book author name" %>
+    </div>
+  </div>
+  <%= f.select :category_id, options_for_select(Category.pluck(:title, :id), selected: f.object.category_id), label_class: "required" %>
+  <%= f.text_area :description, label_class: "required", placeholder: "description" %>
+  <div class="actions">
+    <%= f.submit 'Save', class: "btn btn-primary", data: {"disable-with": "Saving...."} %>
+  </div>
+<% end %>
